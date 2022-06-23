@@ -1,0 +1,70 @@
+.table {
+  width: 100%;
+}
+
+.mat-column-_id {
+  width: 32px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.527);
+  padding-right: 24px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.mat-column-source {
+  width: 100px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.158);
+  text-align: center;
+  font-size: 15px;
+}
+
+/* .mat-column-localDateTime {
+  padding-left: 16px;
+  font-size: 15px;
+
+}*/
+
+.mat-column-startingDateTime {
+  width: 250px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.158);
+  text-align: center;
+  font-size: 15px;
+}
+
+.mat-column-endDateTime {
+  width: 250px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.158);
+  text-align: center;
+  font-size: 15px;
+
+}
+
+.mat-column-location {
+  width: 400px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.158);
+  text-align: center;
+  font-size: 15px;
+}
+
+.mat-column-description {
+  width: 400px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.158);
+  text-align: center;
+  font-size: 15px;
+
+}
+
+.mat-column-blockedRoads {
+  width: 400px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.158);
+  text-align: center;
+  font-size: 15px;
+
+}
+
+.mat-column-impactedLines {
+  width: 150px;
+  border-right: 0.5px solid rgba(0, 0, 0, 0.158);
+  text-align: center;
+  font-size: 15px;
+
+}
