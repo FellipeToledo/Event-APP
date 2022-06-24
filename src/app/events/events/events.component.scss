@@ -2,6 +2,16 @@
   width: 100%;
 }
 
+.mat-header-cell {
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+.mat-cell {
+  background-color: #44475a;
+  color: #8be9fd;
+}
+
 .mat-column-_id {
   width: 32px;
   border-right: 0.5px solid rgba(0, 0, 0, 0.527);

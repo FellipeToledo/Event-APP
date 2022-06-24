@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Event } from '../model/event';
+import { EventService } from '../service/event.service';
 
 @Component({
   selector: 'app-events',
@@ -17,7 +18,12 @@ export class EventsComponent implements OnInit {
   ];
   displayedColumns = ['_id', 'source', /*'localDateTime',*/ 'startingDateTime', 'endDateTime' , 'location', 'description', 'blockedRoads', 'impactedLines'];
 
-  constructor() { }
+   //eventService: EventService;
+
+  constructor(private eventService: EventService) {
+      //this.eventService = new EventService();
+      this.events = this.eventService.list();
+   }
 
   ngOnInit(): void {
   }
