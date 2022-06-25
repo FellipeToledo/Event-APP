@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
 
 import { EventsRoutingModule } from './events-routing.module';
 import { EventsComponent } from './events/events.component';
+import { MaterialModule } from './shared/material/material.module';
+
 
 
 
@@ -15,8 +15,7 @@ import { EventsComponent } from './events/events.component';
   imports: [
     CommonModule,
     EventsRoutingModule,
-    MatTableModule,
-    MatCardModule,
+    MaterialModule,
   ]
 })
 export class EventsModule { }
