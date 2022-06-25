@@ -1,35 +1,33 @@
-
 <mat-card>
-
   <mat-toolbar><span>Eventos cadastrados</span></mat-toolbar>
-
-  <table mat-table [dataSource]="events" class="mat-elevation-z8">
-    <!--- Note that these columns can be defined in any order.
+  <div *ngIf="events$ | async as events; else loading">
+    <table mat-table [dataSource]="events" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- _ID Column -->
-    <ng-container matColumnDef="_id">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let event">{{ event._id }}</td>
-    </ng-container>
+      <!-- _ID Column -->
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let event">{{ event._id }}</td>
+      </ng-container>
 
-    <!-- Source Column -->
-    <ng-container matColumnDef="source">
-      <th mat-header-cell *matHeaderCellDef>Fonte</th>
-      <td mat-cell *matCellDef="let event">{{ event.source }}</td>
-    </ng-container>
+      <!-- Source Column -->
+      <ng-container matColumnDef="source">
+        <th mat-header-cell *matHeaderCellDef>Fonte</th>
+        <td mat-cell *matCellDef="let event">{{ event.source }}</td>
+      </ng-container>
 
-    <!-- Local Date Time Column
+      <!-- Local Date Time Column
     <ng-container matColumnDef="localDateTime">
       <th mat-header-cell *matHeaderCellDef>Local Date Time</th>
       <td mat-cell *matCellDef="let event">{{ event.localDateTime }}</td>
     </ng-container> -->
 
-    <!-- Starting Date Time Column -->
-    <ng-container matColumnDef="startingDateTime">
-      <th mat-header-cell *matHeaderCellDef>Data | Hora inicio</th>
-      <td mat-cell *matCellDef="let event">{{ event.startingDateTime }}</td>
-    </ng-container>
+      <!-- Starting Date Time Column -->
+      <ng-container matColumnDef="startingDateTime">
+        <th mat-header-cell *matHeaderCellDef>Data | Hora inicio</th>
+        <td mat-cell *matCellDef="let event">{{ event.startingDateTime }}</td>
+      </ng-container>
 
       <!-- End Date Time Column -->
       <ng-container matColumnDef="endDateTime">
@@ -37,31 +35,38 @@
         <td mat-cell *matCellDef="let event">{{ event.endDateTime }}</td>
       </ng-container>
 
-    <!-- Location Column -->
-    <ng-container matColumnDef="location">
-      <th mat-header-cell *matHeaderCellDef>Local</th>
-      <td mat-cell *matCellDef="let event">{{ event.location }}</td>
-    </ng-container>
+      <!-- Location Column -->
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef>Local</th>
+        <td mat-cell *matCellDef="let event">{{ event.location }}</td>
+      </ng-container>
 
-    <!-- Description Column -->
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>Descrição</th>
-      <td mat-cell *matCellDef="let event">{{ event.description }}</td>
-    </ng-container>
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+        <td mat-cell *matCellDef="let event">{{ event.description }}</td>
+      </ng-container>
 
-    <!-- Blocked Roads Column -->
-    <ng-container matColumnDef="blockedRoads">
-      <th mat-header-cell *matHeaderCellDef>Vias interditadas</th>
-      <td mat-cell *matCellDef="let event">{{ event.blockedRoads }}</td>
-    </ng-container>
+      <!-- Blocked Roads Column -->
+      <ng-container matColumnDef="blockedRoads">
+        <th mat-header-cell *matHeaderCellDef>Vias interditadas</th>
+        <td mat-cell *matCellDef="let event">{{ event.blockedRoads }}</td>
+      </ng-container>
 
-    <!-- Impacted Lines Column -->
-    <ng-container matColumnDef="impactedLines">
-      <th mat-header-cell *matHeaderCellDef>Linhas impactadas</th>
-      <td mat-cell *matCellDef="let event">{{ event.impactedLines }}</td>
-    </ng-container>
+      <!-- Impacted Lines Column -->
+      <ng-container matColumnDef="impactedLines">
+        <th mat-header-cell *matHeaderCellDef>Linhas impactadas</th>
+        <td mat-cell *matCellDef="let event">{{ event.impactedLines }}</td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-spiner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
 </mat-card>

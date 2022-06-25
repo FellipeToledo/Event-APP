@@ -1,22 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { first, tap } from 'rxjs';
+import { delay, first, tap } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EventService {
-
   private readonly API = '/assets/events.json';
 
-constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-list(): any{
-  return this.httpClient.get<Event[]>(this.API)
-  .pipe(
-    first(),
-    tap(events =>console.log(events))
-  );
-}
-
+  list(): any {
+    return this.httpClient.get<Event[]>(this.API).pipe(
+      first(),
+      delay(1000),
+      tap((events) => console.log(events))
+    );
+  }
 }
