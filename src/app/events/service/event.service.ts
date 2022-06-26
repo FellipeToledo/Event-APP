@@ -6,7 +6,7 @@ import { delay, first, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class EventService {
-  private readonly API = '/assets/events.json';
+  private readonly API = '/assets/ecvents.json';
 
   constructor(private httpClient: HttpClient) {}
 

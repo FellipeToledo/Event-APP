@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { catchError, Observable, of } from 'rxjs';
 
 import { Event } from '../model/event';
 import { EventService } from '../service/event.service';
+import { ErrorDialogComponent } from '../shared/components/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-events',
@@ -24,10 +26,20 @@ export class EventsComponent implements OnInit {
 
   //eventService: EventService;
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, public dialog: MatDialog) {
     //this.eventService = new EventService();
-    this.events$ = this.eventService.list();
+    this.events$ = this.eventService.list().pipe(
+      catchError((error) => {
+        this.onError('Erro ao carregar eventos');
+        return of([]);
+      })
+    );
   }
 
+  onError(errorMsg: String) {
+    this.dialog.open(ErrorDialogComponent, {
+      data: errorMsg
+    });
+  }
   ngOnInit(): void {}
 }
