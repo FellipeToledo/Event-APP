@@ -17,6 +17,12 @@
         <td mat-cell *matCellDef="let event">{{ event.source }}</td>
       </ng-container>
 
+       <!-- Event Type -->
+       <ng-container matColumnDef="eventType">
+        <th mat-header-cell *matHeaderCellDef>Tipo de evento</th>
+        <td mat-cell *matCellDef="let event">{{ event.eventType }}</td>
+      </ng-container>
+
       <!-- Local Date Time Column
     <ng-container matColumnDef="localDateTime">
       <th mat-header-cell *matHeaderCellDef>Local Date Time</th>

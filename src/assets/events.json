@@ -2,6 +2,7 @@
   {
     "_id": "10",
     "source": "COR",
+    "eventType": "Ocorrência",
     "localDateTime": "new Date()",
     "startingDateTime": "new Date(2022, 6, 26, 13, 42)",
     "endDateTime": "new Date(2022, 6, 26, 15, 50)",
@@ -13,6 +14,7 @@
   {
     "_id": "10",
     "source": "COR",
+    "eventType": "Programada",
     "localDateTime": "new Date()",
     "startingDateTime": "new Date(2022, 6, 26, 13, 42)",
     "endDateTime": "new Date(2022, 6, 26, 15, 50)",
@@ -24,6 +26,7 @@
   {
     "_id": "10",
     "source": "COR",
+    "eventType": "Recorrente",
     "localDateTime": "new Date()",
     "startingDateTime": "new Date(2022, 6, 26, 13, 42)",
     "endDateTime": "new Date(2022, 6, 26, 15, 50)",
@@ -35,6 +38,7 @@
   {
     "_id": "10",
     "source": "COR",
+    "eventType": "Ocorrência",
     "localDateTime": "new Date()",
     "startingDateTime": "new Date(2022, 6, 26, 13, 42)",
     "endDateTime": "new Date(2022, 6, 26, 15, 50)",
@@ -46,6 +50,7 @@
   {
     "_id": "10",
     "source": "COR",
+    "eventType": "Recorrente",
     "localDateTime": "new Date()",
     "startingDateTime": "new Date(2022, 6, 26, 13, 42)",
     "endDateTime": "new Date(2022, 6, 26, 15, 50)",

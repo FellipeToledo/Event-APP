@@ -16,6 +16,7 @@ export class EventsComponent implements OnInit {
   displayedColumns = [
     '_id',
     'source',
+    'eventType',
     /*'localDateTime',*/ 'startingDateTime',
     'endDateTime',
     'location',
